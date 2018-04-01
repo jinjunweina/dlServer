@@ -20,7 +20,7 @@ public class Account {
      *账户名
      */
     @Column(name = "accountName")
-    private String acountName;
+    private String accountName;
     /**
      *别名
      */
@@ -32,6 +32,11 @@ public class Account {
     @Column(name = "password")
     private String password;
     /**
+     *新密码
+     */
+    @Column(name = "password1")
+    private String password1;
+    /**
      * PIN码
      */
     @Column(name = "pinCode")
@@ -41,6 +46,11 @@ public class Account {
      */
     @Column(name = "imeiCode")
     private String imeiCode;
+    /**
+     * 档案编号
+     */
+    @Column(name = "dNumber")
+    private String dNumber;
     /**
      * 联系电话
      */
@@ -70,15 +80,14 @@ public class Account {
      *
      */
     @Column(name = "updateTime")
-    private Date updateTime;
+    private String updateTime;
+    /**
+     * 账户类型
+     * 1 普通用户 2交警用户 3 企业用户
+     */
+    @Column(name = "accountType")
+    private String accountType;
 
-    public String getAcountName() {
-        return acountName;
-    }
-
-    public void setAcountName(String acountName) {
-        this.acountName = acountName;
-    }
 
     public String getAlias() {
         return alias;
@@ -152,11 +161,43 @@ public class Account {
         this.zt = zt;
     }
 
-    public Date getUpdateTime() {
+    public String getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getdNumber() {
+        return dNumber;
+    }
+
+    public void setdNumber(String dNumber) {
+        this.dNumber = dNumber;
+    }
+
+    public String getPassword1() {
+        return password1;
+    }
+
+    public void setPassword1(String password1) {
+        this.password1 = password1;
+    }
+
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
     }
 }

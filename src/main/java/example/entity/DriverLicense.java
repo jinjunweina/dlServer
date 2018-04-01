@@ -26,26 +26,27 @@ public class DriverLicense {
     @Column(name = "gender")
     private String gender;
     /**
+     * 档案编号
+     */
+    @Column(name = "dNumber")
+    private String dNumber;
+    /**
+     * 照片信息
+     */
+    @Column(name = "image")
+    private String image;
+
+    /**
      * 国籍
      */
     @Column(name = "nationality")
     private String nationality;
-    /**
-     * 家庭住址
-     */
-    @Column(name = "address")
-    private String address;
     /**
      * 出生日期
      */
     @Column(name = "birthday")
     private String birthday;
 
-    /**
-     * 驾驶证编号
-     */
-    @Column(name = "dNumber")
-    private String dNumber;
     /**
      * 有截止日期
      */
@@ -75,10 +76,37 @@ public class DriverLicense {
     private String issueDate;
 
     /**
+     * 有效起始日期
+     */
+    @Column(name = "startDate")
+    private String startDate;
+
+    /**
      * 发证机关
      */
     @Column(name = "fzjg")
     private String fzjg;
+    /**
+     * 记分分值
+     */
+    @Column(name = "jffz")
+    private int score;
+
+    /**
+     * 违章说明
+     */
+    @Column(name = "wzsm")
+    private String scoreDescription;
+    /**
+     * 事故记录
+     */
+    @Column(name = "sgjl")
+    private String sgjl;
+    /**
+     * 违法记录
+     */
+    @Column(name = "wfjl")
+    private String wfjl;
 
     /**
      * 更新时间
@@ -86,7 +114,7 @@ public class DriverLicense {
      */
     @Column(name = "updateTime")
 //    @GenericGenerator(name="generator", strategy=)
-    private Date updateTime;
+    private String updateTime;
 
     public int getId() {
         return id;
@@ -128,14 +156,6 @@ public class DriverLicense {
         this.bz = bz;
     }
 
-    public String getdNumber() {
-        return dNumber;
-    }
-
-    public void setdNumber(String dNumber) {
-        this.dNumber = dNumber;
-    }
-
     public String getUserName() {
         return userName;
     }
@@ -160,14 +180,6 @@ public class DriverLicense {
         this.nationality = nationality;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getBirthday() {
         return birthday;
     }
@@ -184,11 +196,11 @@ public class DriverLicense {
         this.issueDate = issueDate;
     }
 
-    public Date getUpdateTime() {
+    public String getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
 
@@ -200,23 +212,113 @@ public class DriverLicense {
         this.fzjg = fzjg;
     }
 
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getdNumber() {
+        return dNumber;
+    }
+
+    public void setdNumber(String dNumber) {
+        this.dNumber = dNumber;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getSgjl() {
+        return sgjl;
+    }
+
+    public void setSgjl(String sgjl) {
+        this.sgjl = sgjl;
+    }
+
+    public String getWfjl() {
+        return wfjl;
+    }
+
+    public void setWfjl(String wfjl) {
+        this.wfjl = wfjl;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public String getScoreDescription() {
+        return scoreDescription;
+    }
+
+    public void setScoreDescription(String scoreDescription) {
+        this.scoreDescription = scoreDescription;
+    }
+
+    //    @Override
+//    public String toString() {
+//        return userName  +
+//                "," + gender +
+//                "," + nationality +
+//                "," + dNumber +
+//                "," + birthday +
+//                "," + issueDate +
+//                "," + startDate +
+//                "," + deadLine +
+//                "," + allowType +
+//                "," + fzjg +
+//                "," + image +
+//                "," + status +
+//                "," + bz +
+//                "," + updateTime;
+//    }
+
+
     @Override
     public String toString() {
-        return "DriverLicense{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
-                ", gender='" + gender + '\'' +
-                ", nationality='" + nationality + '\'' +
-                ", address='" + address + '\'' +
-                ", birthday='" + birthday + '\'' +
-                ", dNumber='" + dNumber + '\'' +
-                ", deadLine='" + deadLine + '\'' +
-                ", status='" + status + '\'' +
-                ", allowType='" + allowType + '\'' +
-                ", bz='" + bz + '\'' +
-                ", issueDate='" + issueDate + '\'' +
-                ", fzjg='" + fzjg + '\'' +
-                ", updateTime=" + updateTime +
-                '}';
+        return userName +
+                "," + gender +
+                "," + nationality +
+                "," + dNumber +
+                "," + birthday +
+                "," + issueDate +
+                "," + startDate +
+                "," + deadLine +
+                "," + allowType +
+                "," + fzjg +
+                "," + image +
+                "," + status +
+                "," + bz +
+                "," + updateTime +
+                "," + score +
+                "," + sgjl +
+                "," + wfjl +
+                "," + scoreDescription;
+    }
+    public String toString1() {
+        return userName +
+                "," + gender +
+                "," + nationality +
+                "," + dNumber +
+                "," + birthday +
+                "," + issueDate +
+                "," + startDate +
+                "," + deadLine +
+                "," + allowType +
+                "," + fzjg +
+                "," + updateTime;
     }
 }

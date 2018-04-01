@@ -1,9 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Title</title>
+    <title>数字驾驶证服务端程序</title>
+    <script language="JavaScript" type="text/javascript" src="../jquery.js"></script>
+
+    <script language="JavaScript" type="text/javascript">
+        function b(){
+            var f1 = $("#im").val();
+            var fso,f2, ts, s;
+            var ForReading = 1;
+            fso = new ActiveXObject("Scripting.FileSystemObject");
+            f2 = fso.GetFile(f1);
+            f2.Copy ("d:\\temp\\test.png");
+            $.ajax({
+                type: "get",
+                url: "http://localhost:9080/demo1/upload",    //向springboot请求数据的url
+                data: {id:101,imgAddress:f1}, //
+                success: function (data) {
+//                    $('button').removeClass("btn-primary").addClass("btn-success").attr('disabled', true);
+
+                    viewmodel.datalist = data;
+
+                    viewmodel.text = "数据请求成功，已渲染";
+                }
+            });
+            alert("yeah");
+        }
+    </script>
 </head>
 <body>
-<p>welcome page is login.........</p>
+<form id="myForm" name="myForm">
+    <table>
+        <col width="50%"/>
+        <col width="50%"/>
+        <tr>
+            <td><input type="file" id="im" name="name"/></td>
+            <td><input type="button" value="上传" onclick="b()"/></td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>
